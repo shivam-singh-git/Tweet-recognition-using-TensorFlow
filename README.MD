@@ -1,139 +1,115 @@
-# Sentiment Analysis for Emotion Classification
-
-This project performs sentiment analysis on text data to classify emotions into six categories: Sadness, Joy, Love, Anger, Fear, and Surprise. The model is built using various deep learning techniques, including Bidirectional LSTM, GRU, and CNN, to predict the emotion conveyed in a given text.
+# Comparative Study of Deep Learning Models for Sentiment Analysis
 
 ## Table of Contents
-- [Overview](#overview)
-- [Technologies Used](#technologies-used)
-- [Data](#data)
-- [Model Architecture](#model-architecture)
-- [Training the Model](#training-the-model)
-- [Evaluation](#evaluation)
-- [Visualizations](#visualizations)
-- [How to Run](#how-to-run)
+- [Model Performance Comparison](#model-performance-comparison)
+  - [LSTM (Simple)](#lstm-simple)
+  - [GRU](#gru)
+  - [CNN](#cnn)
+  - [Bi-directional LSTM](#bi-directional-lstm)
+  - [CNN + LSTM](#cnn--lstm)
+  - [GRU + CNN](#gru--cnn)
+- [Model Performance Summary](#model-performance-summary)
+- [Conclusion](#conclusion)
+- [Future Work](#future-work)
 - [License](#license)
 
-## Overview
+## Model Performance Comparison
 
-The project utilizes a variety of deep learning architectures to perform emotion classification. The main goal is to classify the emotion of a given text into one of the following categories:
-- Sadness
-- Joy
-- Love
-- Anger
-- Fear
-- Surprise
+This repository contains the implementation and performance comparison of various deep learning models for emotion classification. The models tested include:
 
-The models used in this project are Bidirectional LSTM, GRU, and CNN, all trained on a dataset of labeled tweets.
+- **LSTM (Simple)**
+- **GRU**
+- **CNN**
+- **Bi-directional LSTM**
+- **CNN + LSTM**
+- **GRU + CNN**
 
-## Technologies Used
+The aim is to predict emotions from text and evaluate the performance using metrics such as accuracy, precision, recall, and F1-score.
 
-- Python
-- TensorFlow
-- Keras
-- Scikit-learn
-- Numpy
-- Pandas
-- Matplotlib
-- Seaborn
-- NLTK
-- Google Colab (for training)
+### LSTM (Simple)
+- **Epochs:** 10
+- **Final Accuracy:** 89.40%
+- **Precision, Recall, F1-Score:**
+    - Anger: Precision = 0.89, Recall = 0.89, F1 = 0.89
+    - Fear: Precision = 0.87, Recall = 0.81, F1 = 0.84
+    - Joy: Precision = 0.94, Recall = 0.91, F1 = 0.93
+    - Love: Precision = 0.73, Recall = 0.82, F1 = 0.77
+    - Sadness: Precision = 0.93, Recall = 0.93, F1 = 0.93
+    - Surprise: Precision = 0.60, Recall = 0.79, F1 = 0.68
+    - **Accuracy:** 89%
 
-## Data
+### GRU
+- **Epochs:** 20
+- **Final Accuracy:** 91.00%
+- **Precision, Recall, F1-Score:**
+    - Anger: Precision = 0.90, Recall = 0.92, F1 = 0.91
+    - Fear: Precision = 0.88, Recall = 0.89, F1 = 0.88
+    - Joy: Precision = 0.94, Recall = 0.94, F1 = 0.94
+    - Love: Precision = 0.75, Recall = 0.85, F1 = 0.80
+    - Sadness: Precision = 0.95, Recall = 0.94, F1 = 0.95
+    - Surprise: Precision = 0.86, Recall = 0.56, F1 = 0.68
+    - **Accuracy:** 91%
 
-The dataset used for this project contains labeled emotion data from tweets. The dataset is split into three parts:
-- **Training Data**: For training the models
-- **Validation Data**: For tuning the hyperparameters and evaluating the model during training
-- **Test Data**: For final evaluation of the model's performance
+### CNN
+- **Epochs:** 10
+- **Final Accuracy:** 89.00%
+- **Precision, Recall, F1-Score:**
+    - Anger: Precision = 0.90, Recall = 0.86, F1 = 0.88
+    - Fear: Precision = 0.79, Recall = 0.81, F1 = 0.80
+    - Joy: Precision = 0.92, Recall = 0.94, F1 = 0.93
+    - Love: Precision = 0.80, Recall = 0.77, F1 = 0.78
+    - Sadness: Precision = 0.95, Recall = 0.91, F1 = 0.93
+    - Surprise: Precision = 0.59, Recall = 0.79, F1 = 0.68
+    - **Accuracy:** 89%
 
-Each entry contains:
-- **text**: The tweet content
-- **label**: The emotion label (0 to 5)
+### Bi-directional LSTM
+- **Epochs:** 15
+- **Final Accuracy:** 89.00%
+- **Precision, Recall, F1-Score:**
+    - Anger: Precision = 0.92, Recall = 0.81, F1 = 0.86
+    - Fear: Precision = 0.84, Recall = 0.88, F1 = 0.86
+    - Joy: Precision = 0.92, Recall = 0.93, F1 = 0.92
+    - Love: Precision = 0.70, Recall = 0.86, F1 = 0.77
+    - Sadness: Precision = 0.95, Recall = 0.92, F1 = 0.93
+    - Surprise: Precision = 0.61, Recall = 0.59, F1 = 0.60
+    - **Accuracy:** 89%
 
-## Model Architecture
+### CNN + LSTM
+- **Epochs:** 15
+- **Final Accuracy:** 80.30%
+- **Precision, Recall, F1-Score:**
+    - Anger: Precision = 0.86, Recall = 0.81, F1 = 0.83
+    - Fear: Precision = 0.72, Recall = 0.80, F1 = 0.76
+    - Joy: Precision = 0.93, Recall = 0.94, F1 = 0.93
+    - Love: Precision = 0.69, Recall = 0.78, F1 = 0.73
+    - Sadness: Precision = 0.91, Recall = 0.87, F1 = 0.89
+    - Surprise: Precision = 0.63, Recall = 0.72, F1 = 0.67
+    - **Accuracy:** 80.30%
 
-The following models were used in the project:
+### GRU + CNN
+- **Epochs:** 15
+- **Final Accuracy:** 89.64%
+- **Precision, Recall, F1-Score:**
+    - Anger: Precision = 0.91, Recall = 0.90, F1 = 0.91
+    - Fear: Precision = 0.88, Recall = 0.90, F1 = 0.89
+    - Joy: Precision = 0.94, Recall = 0.94, F1 = 0.94
+    - Love: Precision = 0.75, Recall = 0.85, F1 = 0.80
+    - Sadness: Precision = 0.95, Recall = 0.94, F1 = 0.94
+    - Surprise: Precision = 0.86, Recall = 0.56, F1 = 0.68
+    - **Accuracy:** 89.64%
 
-1. **Bidirectional LSTM Model 1**:
-   - Embedding Layer
-   - Conv1D Layer
-   - LSTM Layers (Bidirectional)
-   - Dropout for regularization
-   - Dense Layer with softmax activation for multi-class classification
+## Model Performance Summary
+The **GRU** model achieved the highest accuracy of **91.00%**, followed closely by **GRU + CNN** at **91.20%**. Both of these models outperformed others in terms of accuracy and F1-score for the majority of emotion classes.
 
-2. **GRU Model**:
-   - Embedding Layer
-   - Bidirectional GRU Layer
-   - GlobalMaxPooling Layer
-   - Dense Layers with Dropout for regularization
+## Conclusion
+- The **GRU** model achieved the highest accuracy of **91.00%**.
+- **GRU + CNN** also performed well with an accuracy of **89.64%**.
+- **CNN** and **Bi-directional LSTM** achieved relatively similar results, with accuracies of 89.00%.
 
-3. **CNN Model**:
-   - Embedding Layer
-   - Convolutional Layers (Conv1D)
-   - MaxPooling Layers
-   - Dense Layer for final classification
-
-4. **Bidirectional LSTM Model 2** (with more LSTM layers):
-   - Embedding Layer
-   - Bidirectional LSTM Layers
-   - Dropout for regularization
-   - Dense Layers for output
-
-## Training the Model
-
-Each model was trained using the following parameters:
-- **Batch Size**: 32
-- **Epochs**: Varying from 10 to 20, depending on the model
-- **Optimizer**: Adam
-- **Loss Function**: Sparse Categorical Cross-Entropy (for integer labels) / Categorical Cross-Entropy (for one-hot encoded labels)
-
-The models were trained on the processed data after tokenizing the text and padding the sequences.
-
-## Evaluation
-
-After training, the models were evaluated on the test data using:
-- **Accuracy**
-- **Classification Report**: Including precision, recall, and F1-score
-- **Confusion Matrix**: Visualized using Seaborn for better understanding of misclassifications
-
-## Visualizations
-
-- **Training and Validation Accuracy/Loss**: Plots showing the progression of training and validation accuracy/loss for each model.
-- **Confusion Matrix**: A heatmap showing the confusion matrix to evaluate model performance across different classes.
-
-## How to Run
-
-### Prerequisites
-
-- Python 3.x
-- TensorFlow
-- Pandas
-- Scikit-learn
-- Numpy
-- Matplotlib
-- Seaborn
-- NLTK
-- Google Colab (optional for running models on GPUs)
-
-### Steps
-
-1. Clone the repository:
-    ```bash
-    git clone https://github.com/yourusername/sentiment-analysis.git
-    cd sentiment-analysis
-    ```
-
-2. Install the necessary dependencies:
-    ```bash
-    pip install -r requirements.txt
-    ```
-
-3. Run the sentiment analysis script to train the models:
-    ```bash
-    python sentiment_analysis.py
-    ```
-
-4. The models will be saved and evaluated. The results will be displayed, including accuracy, confusion matrices, and classification reports.
+## Future Work
+- Explore the combination of more advanced models such as Transformer-based architectures.
+- Fine-tune the hyperparameters for better results.
+- Experiment with other types of data preprocessing techniques.
 
 ## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This repository is licensed under the MIT License. See LICENSE for more information.
