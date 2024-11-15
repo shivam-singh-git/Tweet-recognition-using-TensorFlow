@@ -77,7 +77,7 @@ The aim is to predict emotions from text and evaluate the performance using metr
 
 ### GRU + CNN
 - **Epochs:** 15
-- **Final Accuracy:** 91.20%
+- **Final Accuracy:** 89.64%
 - **Precision, Recall, F1-Score:**
     - Anger: Precision = 0.91, Recall = 0.90, F1 = 0.91
     - Fear: Precision = 0.88, Recall = 0.90, F1 = 0.89
@@ -85,7 +85,7 @@ The aim is to predict emotions from text and evaluate the performance using metr
     - Love: Precision = 0.75, Recall = 0.85, F1 = 0.80
     - Sadness: Precision = 0.95, Recall = 0.94, F1 = 0.94
     - Surprise: Precision = 0.86, Recall = 0.56, F1 = 0.68
-    - **Accuracy:** 91.20%
+    - **Accuracy:** 89.64%
 
 ## Conclusion
 - The **GRU** model achieved the highest accuracy of **91.00%**, followed closely by **GRU + CNN** at **91.20%**. Both of these models outperformed others in terms of accuracy and f1-score for the majority of emotion classes.
